@@ -84,6 +84,80 @@ def validate_coin_sharing():
     global coins
     coins += 5
 
+#Q7 the code is meant to run a number gussing game where the user guesses
+# a secret number in this case the secret number is 7. The user has 3 attempts to guess the number correctly.
+def number_guessing_game(secret_number=7, attempts=3):
+    secret_number = 7
+    attempts = 3
+    print(f"\nLet's play a number guessing game {pirate_name}!\n")
+    print(f"\nYou have {attempts} attempts to guess the secret number between 1 and 10.\n")
+
+    while attempts > 0:
+        guess = int(input("Enter your guess: "))
+        if guess == secret_number:
+            print("\nCongratulations! You've guessed the secret number!")
+            global coins
+            coins += 10  # Reward for guessing correctly
+            print(f"\n You have earned 10 more coins! Your total coins are now: {coins}\n")
+            return True
+        else:
+            attempts -= 1
+            print(f"Wrong guess! You have {attempts} attempts left.")
+
+    print("Sorry, you've used all your attempts. The secret number was 7.")
+    return False
+
+
+# Q8 the code is meant to ask the user for word then it will
+# repeat the word 5 times.
+def repeat_word():
+    word = input("Please enter a word to repeat: ")
+    print(f"\nRepeating the word '{word}' 5 times:")
+    for i in range(5):
+        print(word)
+    global coins
+    coins += 10  # Reward for repeating the word
+    print(f"\n Congratulations! 10 more coins have been added to your chest. Your total coins are now: {coins}\n")
+    return word
+
+# Q9 the code is meant to display the total a list of items 
+# the user has collected during the adventure.
+def display_collected_items(items=None):
+    if items is None:
+        items = ["Sword", "Compass", "Map", "Key", "Lantern"]
+    print("\nHere are the items you have collected during your adventure:")
+    for item in items:
+        print(f"- {item}")
+
+# Q10 the  code is meant ot list the total number of items in the 
+# list of items the user has collected during the adventure.
+def list_collected_items(items=None):
+    if items is None:
+        items = ["Sword", "Compass", "Map", "Key", "Lantern"]
+    print(f"\nYou have collected a total of {len(items)} items during your adventure:")
+    for item in items:
+        print(f"- {item}")
+
+# Q11 the code is meant to know whether the user is above or below 18 years old.
+# and dcide wether they can continue the adventure or not.
+def check_age_eligibility(age):
+    if age < 18:
+        print(f"\nSorry, {player_name}, you must be at least 18 years old to continue the adventure.")
+        print("You can still explore the island, but some challenges may be restricted.\n")
+    else:
+        print(f"\nGreat! You are eligible to continue the adventure, {player_name}.\n") 
+
+# Q12 the code is meant to display the toal number of coins 
+# the user has collected during the adventure and convert 60% of the total coins
+# into sliver coins and 40% into gold coins.
+def convert_coins(total_coins):
+    silver_coins = int(total_coins * 0.6)
+    gold_coins = int(total_coins * 0.4)
+    print(f"\n This is an appraisal of your coins:")
+    print(f"- Silver Coins: {silver_coins}")
+    print(f"- Gold Coins: {gold_coins}\n")
+
+
 introduction()
 
 player_name = get_player_name()
@@ -99,3 +173,15 @@ crew_members = share_coins_among_crew(temp_coins)
 validate_coin_sharing()
 
 congratulate_player(coins)
+
+guessing_game_result = number_guessing_game()
+
+repeat_word_result = repeat_word()
+
+display_collected_items()
+
+list_collected_items()
+
+check_age_eligibility(player_age)
+
+convert_coins(coins)
