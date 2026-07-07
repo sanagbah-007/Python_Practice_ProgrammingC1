@@ -86,9 +86,11 @@ def validate_coin_sharing():
 
 #Q7 the code is meant to run a number gussing game where the user guesses
 # a secret number in this case the secret number is 7. The user has 3 attempts to guess the number correctly.
-def number_guessing_game(secret_number=7, attempts=3):
-    secret_number = 7
-    attempts = 3
+def number_guessing_game(secret_number=None, attempts=None):
+    if secret_number is None:
+        secret_number = 7
+    if attempts is None:
+        attempts = 3
     print(f"\nLet's play a number guessing game {pirate_name}!\n")
     print(f"\nYou have {attempts} attempts to guess the secret number between 1 and 10.\n")
 
