@@ -4,9 +4,6 @@
 
 # Q1 the code is meant to welcome the user and ask them for 2 integers 
 # and tell whether they are odd or even numbers.
-from unicodedata import category
-
-
 def introduction():
     print("\nWelcome to the Kingdom of PyLand!")
     print("To become the Royal Python Wizard, you must complete seven challenges.")
