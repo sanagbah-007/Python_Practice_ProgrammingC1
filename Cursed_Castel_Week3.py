@@ -71,7 +71,21 @@ def treasure_chest():
     collect_gold(5)
 
 
-# Challenge 4
+# Challenge 4 the code is meant to Create fight_skeletons(number_of_skeletons).
+# the user must input a number of skeletons to fight. 
+# Use a for loop to defeat each skeletonw with the weapon they chose.
+def fight_skeletons(number_of_skeletons, weapon):
+    try:
+        number_of_skeletons = int(input("\nEnter the number of skeletons to fight: "))
+    except ValueError:
+        print("Invalid input. Please enter a number.")
+        return
+
+    for i in range(number_of_skeletons):
+        print(f"\nFighting skeleton {i + 1} with your {weapon}...")
+        print("You defeated the skeleton!\n")
+    print(f"You have defeated all {number_of_skeletons} skeletons!\n")
+
 
 introduction()
 
@@ -80,3 +94,5 @@ chose_level()
 chose_weapon()
 
 treasure_chest()
+
+fight_skeletons()
